@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropdown</title>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+    .mbmenu_nav{width: 100%;}
+    .mbmenu_nav .dropdown + .dropdown{margin-left: 0;}
+    .mbmenu_nav .dropdown{text-align: left;}
+    .mbmenu_nav .dropdown:nth-of-type(1) > a{border-top: 1px solid #a1adb9;}
+    .mbmenu_nav .dropdown > a{
+        position: relative; display: block; height: 45px; padding-left: 5%;
+        font-size: 16px; line-height: 45px; color: #073567;
+        border-bottom: 1px solid #a1adb9;
+    }
+    .mbmenu_nav .dropdown > a .caret{
+        position: absolute; right:6%; top:50%;
+        display: block; width:8px; height:8px; margin-top:-7px;
+        border-top: 3px solid #073567; border-right: 3px solid #073567;
+        -webkit-transform: translateX(-50%) rotate(135deg);
+        transform: translateX(-50%) rotate(135deg);
+    }
+    .mbmenu_nav .dropdown.is_open > a .caret{ margin-top: -3px; -webkit-transform: translateX(-50%) rotate(-45deg); transform: translateX(-50%) rotate(-45deg);}
+    .mbmenu_nav .dropdown_menu{width: 100%; padding: 20px 0 20px 25px; background-color: #073567;}
+    .mbmenu_nav .dropdown.is_open .dropdown_menu{display: block;}
+    .mbmenu_nav .dropdown_menu a{ display: block; font-size: 14px; line-height: 30px; font-weight: 300; color: #fff;}
+    .mbmenu_nav .dropdown_menu i{display: inline-block; margin-right: 5px; line-height: 30px;}
+    </style>
+</head>
+<body>
+    
+    <nav class="mbmenu_nav">
+        <ul id="gnb">
+            <li class="dropdown"><a href="#">위원회 소개<b class="caret"></b></a>
+                <ul class="dropdown_menu">
+                    <li><a href="위원회소개_인사말.html"><i>&#45;</i>인사말</a></li>
+                    <li><a href="위원회소개_위원회역할.html"><i>&#45;</i>위원회 역할</a></li>
+                    <li><a href="위원회소개_조직도위원소개_조직도.html"><i>&#45;</i>조직도·위원소개</a></li>
+                    <li><a href="위원회소개_찾아오시는길.html"><i>&#45;</i>찾아오시는 길</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="#">알림마당<b class="caret"></b></a>
+                <ul class="dropdown_menu">
+                    <li><a href="알림마당_공지사항_list.html"><i>&#45;</i>공지사항</a></li>
+                    <li><a href="알림마당_보도자료_list.html"><i>&#45;</i>보도자료</a></li>
+                    <li><a href="알림마당_국제협력_list.html"><i>&#45;</i>국제협력</a></li>
+                    <li><a href="알림마당_위원회활동_list.html"><i>&#45;</i>위원회 활동</a></li>
+                    <li><a href="알림마당_미디어_list.html"><i>&#45;</i>미디어</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="#">정책·정보<b class="caret"></b></a>
+                <ul class="dropdown_menu">
+                    <li><a href="정책정보_안건심의_list.html"><i>&#45;</i>안건/심의</a></li>
+                    <li><a href="정책정보_참고자료보고서_list.html"><i>&#45;</i>참고자료/보고서</a></li>
+                    <li><a href="정책정보_카드뉴스_list.html"><i>&#45;</i>카드뉴스·인포그래픽</a></li>
+                    <li><a href="정책정보_데이터119.html"><i>&#45;</i>국가 데이터 정책방안</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="#">국민참여<b class="caret"></b></a>
+                <ul class="dropdown_menu">
+                    <li><a href="국민참여_해커톤_list.html"><i>&#45;</i>해커톤</a></li>
+                    <li><a href="국민참여_의견수렴_list.html"><i>&#45;</i>의견수렴</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+// mobile : 전체메뉴 열기 닫기
+        $('.dropdown_menu').hide();
+        $(".dropdown > a").on('click', function(e){
+            $(this).parent().toggleClass("is_open");
+            $(this).parent().find(".dropdown_menu").slideToggle();
+            e.stopPropagation()
+        });
+    });
+</script>
+</body>
+</html>

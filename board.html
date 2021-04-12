@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알림마당 > 공지사항</title>
+
+    <style>
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: inherit;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {display: block;}
+ol, ul {list-style: none;}
+br{opacity: 0;}
+html, body {height: 100%;position: relative;}
+input[type=button], input[type=text], input[type=image], input[type=submit], textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
+textarea {
+  overflow: hidden;
+}
+textarea.content{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+}
+/* IE6 */
+:first-child + html .clearFix {
+  zoom: 1;
+}
+
+/* IE7 */
+.hide, .hidden, .blind, caption, legend {
+  opacity: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+
+.clearFix:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+* html .clearFix {
+  zoom: 1;
+}
+
+/* 뷰표트 변환시 폰트크기 자동확대 방지 */
+body {
+  -webkit-text-size-adjust: none;
+}
+
+input[type='text'], input[type='password'], input[type='submit'], input[type='search'] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+input[type='date'] {
+  background-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:active, a:hover {
+  text-decoration: none;
+}
+
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+input, select, textarea, button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input[type=radio] {
+  -webkit-appearance: radio;
+  -moz-appearance: radio;
+  appearance: radio;
+}
+
+input[type=submit], input[type=button], button {
+  cursor: pointer;
+}
+
+input[type=checkbox], input[type=checkbox] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  appearance: checkbox;
+}
+
+input[type=checkbox] {
+  /* position: static !important; */
+  vertical-align: middle;
+}
+
+input[type=checkbox] + label:before {
+  display: none;
+}
+
+
+/* IE10 이상에서 input box 에 추가된 지우기 버튼 제거 */
+input::-ms-clear {
+  display: none;
+}
+
+/* input type number 에서 화살표 제거 */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Select box 스타일 초기화 */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* IE 에서 Select box 화살표 제거 */
+select::-ms-expand {
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, strong, table th, input, textarea, select, button {
+    margin: 0; padding: 0;
+    font-family: 'KoPub', 'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', Dotum, Arial, sans-serif;
+    font-weight: 400; font-size: inherit;
+    color: #393939; letter-spacing: -0.2px;
+}
+html {font-size: 10px; line-height: 1.5;}
+.input, .textarea, .select select {background-color: white; border-color: transparent; font-size: 17px; font-weight: 500;}
+.textarea{border: 1px solid #b9b9b9; width: 100%; resize: vertical; padding: 15px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.input::placeholder, .textarea::placeholder, .select select::placeholder{color: rgba(54, 54, 54, 0.3);font-size: 17px; font-weight: 300;}
+.input::-moz-placeholder, .textarea::-moz-placeholder, .select select::-moz-placeholder { color: rgba(54, 54, 54, 0.3); font-size: 17px; font-weight: 300;}
+.input::-webkit-input-placeholder, .textarea::-webkit-input-placeholder, .select select::-webkit-input-placeholder { color: rgba(54, 54, 54, 0.3); font-size: 17px; font-weight: 300;}
+.input:-moz-placeholder, .textarea:-moz-placeholder, .select select:-moz-placeholder { color: rgba(54, 54, 54, 0.3); font-size: 17px; font-weight: 300;}
+.input:-ms-input-placeholder, .textarea:-ms-input-placeholder, .select select:-ms-input-placeholder { color: rgba(54, 54, 54, 0.3); font-size: 17px; font-weight: 300;}
+
+
+
+
+
+
+.hidden-pc{display: none;}
+/* .hidden-mb{display: block;} */
+.text-ellipsis{
+    display: block;
+    word-wrap: normal;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.text-ellipsis2{
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 여러 줄 자르기 추가 스타일 */
+    white-space: normal;
+    text-align: left; word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* &lt; &gt; */
+.hcode{font-family: Dotum; font-weight: 700;}
+
+
+/* button */
+/* button.is_file{background-color: #289fdc; color: #fff;} */
+
+.txt-16{font-size: 16px;}
+.txt-18{font-size: 18px;}
+.txt-20{font-size: 20px;}
+.txt-22{font-size: 22px;}
+.has-weight-medium {font-weight: 500;}
+.has-weight-bold {font-weight: 700;}
+
+.cl1{color: #2e9ae5;}
+.cl2{color: #006db9;}
+.cl3{color: #013061;}
+.bgc3{background-color: #013061;}
+
+.buttons{font-size: 0;}
+.button {display: inline-block; font-size: 18px; line-height: 1.8; padding: 4px 18px;}
+.button + .button{margin-left: 10px;}
+.button.is-link {background-color: #3273dc; color: #fff;}
+.button.is-list {}
+.button.is-info {}
+.button.is-small {}
+.button.is-normal {}
+.button.is-medium {}
+.is-blue1 {background-color: #289fdc; color: #fff;}
+.is-blue2 {background-color: #006db9; color: #fff;}
+.is-blue3 {background-color: #013061; color: #fff;}
+.is-blue4 {background-color: #dff0ff; color: #00447c; border: 1px solid #90b5d6;}
+.is-blue5 {background-color: #6d8bac; color: #fff;}
+.is-blue6 {border: 2px solid #6d8bac; color: #6d8bac;}
+.is-blue7 {background-color: #827faa; color: #fff;} /*보라색*/
+
+.text-center{text-align: center !important;}
+.text-left{text-align: left !important;}
+.text-right{text-align: right !important;}
+
+
+
+
+
+
+
+
+.content_header{height: 24px; padding: 45px 0 15px; margin-bottom: 20px; border-bottom: 1px solid #004791;}
+.content_tit{display: inline-block; font-size: 26px; line-height: 1; font-weight: 700; color: #013061; text-align: left;}
+
+.breadcrumb{float: right; display: inline-block;  font-size: 0;}
+.breadcrumb *{display: inline-block; font-size: 16px; line-height: 16px; color: #6f6f6f;}
+.breadcrumb > span{margin: 0 4px 0 5px; font-family: Dotum; font-size: 13px;}
+.content_wrap{width: 1400px; margin: 0 auto; font-size: 17px;}
+
+.board_header{margin-bottom: 15px; padding-top: 20px;}
+.board_header:after{content: ''; display: block; clear: both;}
+.board_total{ display: inline-block; font-size: 16px; line-height: 42px; color: #393939;}
+.board_total em{color: #3984d8;}
+.board_search{float: right;border: 1px solid #3984d8;}
+.board_search .field{font-size: 0;}
+.board_search .control{ display: inline-block; height: 100%; line-height: 40px; vertical-align: top;}
+.board_search .control *{height: 40px; vertical-align: top;}
+.board_search .select{position: relative; line-height: 42px;}
+.board_search .select:after{
+    content: ''; position: absolute; top: 13px; right: 10px; width: 14px; height: 14px;
+    background: url(../img/board.png) no-repeat; background-position: -48px -15px;
+}
+.board_search select{width: 110px; padding-left: 17px;}
+.board_search .input{ width: 255px; padding-left: 15px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.board_search .input::placeholder{color: #878787; }
+.board_search .button{
+    width: 46px; height: 40px; font-size: 0; vertical-align: top;
+    background: #fff url(../img/board.png)no-repeat; background-position: 0 -3px;
+}
+.table_wrap{ border-top: 3px solid #375b83;}
+.table {table-layout: fixed;  background-color: white; font-size: 18px; line-height: 1.6; color: #393939; text-align: center;}
+.table td, .table th {border-width: 0 0 1px; padding: 20px 10px; vertical-align: middle; }
+.table tbody { background-color: transparent; }
+.table tbody tr{border-bottom: 1px solid #b9b9b9;}
+.table tbody tr:last-child td, .table tbody tr:last-child th { border-bottom-width: 0; }
+.table thead {background-color: transparent; border-bottom: 1px solid #b9b9b9;}
+.table thead th{font-size: 17px; line-height: 1.7; font-weight: 700; color: #375b83;}
+.table .notify{background-color: #f4f9ff;}
+.table .title {line-height: 1.8;}
+.table a.title:hover{text-decoration: underline;}
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+    
+<div class="wrap">
+<!-- content -->
+<div class="content " id="contents">
+    <div class="content_body">
+        <div class="content_wrap">
+            <div class="content_header">
+                <h3 class="content_tit">공지사항</h3>
+                <div class="breadcrumb">
+                    <a href="#"><span>위원회 소개</span></a>
+                    <span class="hcode">&gt;</span>
+                    <a href="#" class="bread_active"><span>조직도·위원소개</span></a>
+                    <span class="hcode">&gt;</span>
+                    <a href="#" class="bread_active"><span>조직도</span></a>
+                </div>
+            </div>
+<!-- s: content -->
+            <div class="board">
+                <div class="board_wrap">
+                    <!-- s: .board_header -->
+                    <div class="board_header">
+                        <div class="board_total is-hidden-mobile">
+                            전체 <em>24</em>건, 현재 페이지 <em>1</em>/1
+                        </div>
+                        <div class="board_search">
+                            <div class="field">
+                                <div class="control">
+                                    <div class="select">
+                                        <select>
+                                            <option value="" selected>전체</option>
+                                            <option value="0">제목</option>
+                                            <option value="1">기간</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="control"><input class="input" type="text" placeholder="검색어를 입력하세요"></div>
+                                <div class="control"><button class="button">검색</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- e: .board_header -->
+                    <!-- s: .table_wrap -->
+                    <div class="table_wrap">
+                        <table class="table">
+                            <caption class="hide">번호,제목,기간,진행상황에 따른 리스트 목록</caption>
+                            <colgroup>
+                                <col style="width:80px;" class="hidden-mb">
+                                <col style="">
+                                <col style="width:200px;" class="hidden-mb">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="hidden-mb">번호</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col" class="hidden-mb">작성일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="notify">
+                                    <td class="hidden-mb">공지</td>
+                                    <td class="text-left">
+                                        <a href="#" class="title text-ellipsis">
+                                            통일교육원 공무직근로자 채용 서류전형 합격자 및 면접시험 일정공고
+                                            통일교육원 공무직근로자 채용 서류전형 합격자 및 면접시험 일정공고
+                                            통일교육원 공무직근로자 채용 서류전형 합격자 및 면접시험 일정공고
+                                            통일교육원 공무직근로자 채용 서류전형 합격자 및 면접시험 일정공고
+                                            통일교육원 공무직근로자 채용 서류전형 합격자 및 면접시험 일정공고
+                                        </a>
+                                        <p class="title hidden-pc">2021.01.01</p>
+                                    </td>
+                                    <td class="hidden-mb">2021.01.01</td>
+                                </tr>
+                                <tr>
+                                    <td class="hidden-mb">2</td>
+                                    <td class="text-left">
+                                        <a href="#" class="title text-ellipsis">
+                                            통일교육원 공무직근로자 채용 서류전형 합격자 및 면접시험 일정공고
+                                            통일교육원 공무직근로자 채용 서류전형 합격자 및 면접시험 일정공고
+                                            통일교육원 공무직근로자 채용 서류전형 합격자 및 면접시험 일정공고
+                                            통일교육원 공무직근로자 채용 서류전형 합격자 및 면접시험 일정공고
+                                            통일교육원 공무직근로자 채용 서류전형 합격자 및 면접시험 일정공고
+                                        </a>
+                                        <p class="title hidden-pc">2021.01.01</p>
+                                    </td>
+                                    <td class="hidden-mb">2021.01.01</td>
+                                </tr>
+                                <tr>
+                                    <td class="hidden-mb">1</td>
+                                    <td class="text-left">
+                                        <a href="#" class="title text-ellipsis">
+                                            통일교육원 공무직근로자 채용 서류전형 합격자 및 면접시험 일정공고
+                                        </a>
+                                        <p class="title hidden-pc">2021.01.01</p>
+                                    </td>
+                                    <td class="hidden-mb">2021.01.01</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- e: .table_wrap -->
+                </div>
+            </div>
+<!-- e: content -->
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+</body>
+</html>
