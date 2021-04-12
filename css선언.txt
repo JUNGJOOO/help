@@ -1,0 +1,190 @@
+<Position>
+position
+
+<Box>
+display
+float
+width height
+padding margin
+overflow
+
+<Typo>
+font
+vertical-align cursor
+E
+<Visual>
+background
+border
+opacity
+visibility
+transform
+box-sizing, box-shadow
+
+초록
+# 04952e
+
+노랑
+f19f39
+로 바꾸기.
+
+
+<flex 정렬할때>
+
+display: -webkit-box; display: -ms-flexbox; display: flex;
+-webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+-webkit-box-align: center; -ms-flex-align: center; align-items: center;
+-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+
+-webkit-justify-content: space-between; justify-content: space-between;
+-webkit-justify-content: flex-start; justify-content: flex-start;
+
+
+
+
+<높이만큼 다른것들의 높이도 같이 커지게>
+위의 태그에
+overflow: hidden; flex-direction: row;
+display: -webkit-box; display: -ms-flexbox; display: flex;
+그 아래태그에 
+    display: -webkit-box; display: -ms-flexbox; display: flex;
+    -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+    -webkit-box-align: center; -ms-flex-align: center; align-items: center;
+
+
+
+flex-wrap: wrap 또는 flex-direction:column; (block으로 만들어준다.)
+
+
+-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+
+-moz-box-shadow:    0 0 10px rgba(0,0,0,0.1);
+-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.1);
+box-shadow:         0 0 10px rgba(0,0,0,0.1);
+
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+
+
+
+블록
+ : 목적 menu, button, inner, contents, search-form, list
+
+요소 block__element
+ : 목적 item, text, title, box, wrap, area, land, ground
+ex) menu__item, header__title
+
+수식어
+ : 모양(color, size), 상태(disabeld, checked)
+ex) form__button--disabled
+
+
+
+블록 - 요소 - 수식어
+블록 - 수식어
+
+
+제한된 공간안에서 fix되는것처럼 y scroll 넣을때
+.item{height: 1000px; overflow-y: scroll;-ms-overflow-style: none; scrollbar-width: none;}
+.item::-webkit-scrollbar {display: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+.btn_bgwhite_35 {display:inline-block; min-width:86px; height:35px; padding:0 20px; margin:0; border:1px solid #4a5864; border-radius:5px; background:#fff; color:#4a5864; font-size:15px; line-height:33px; font-weight:500; text-align:center;}
+.btn_bggray_35 {display:inline-block; min-width:86px; height:35px; padding:0 20px; margin:0; border:1px solid #a9b2bb; border-radius:5px; background:#a9b2bb; color:#fff; font-size:15px; line-height:33px; font-weight:500; text-align:center;}
+.btn_bggreen_35 {display:inline-block; min-width:86px; height:35px; padding:0 20px; margin:0; border:1px solid #43baca; border-radius:5px; background:#43baca; color:#fff; font-size:15px; line-height:33px; font-weight:500; text-align:center;}
+.btn_bgblackgreen_35 {display:inline-block; min-width:86px; height:35px; padding:0 20px; margin:0; border:1px solid #4a5864; border-radius:5px; background:#4a5864; color:#fff; font-size:15px; line-height:33px; font-weight:500; text-align:center;}
+
+.btn_bggray_29 {display:inline-block; min-width:78px; height:29px; padding:0 10px; margin:0; border:1px solid #a9b2bb; border-radius:4px; background:#a9b2bb; color:#fff; font-size:13px; line-height:27px; font-weight:500; text-align:center;}
+.btn_bggreen_29 {display:inline-block; min-width:78px; height:29px; padding:0 10px; margin:0; border:1px solid #43baca; border-radius:4px; background:#43baca; color:#fff; font-size:13px; line-height:27px; font-weight:500; text-align:center;}
+.btn_bggreen_29.active {border-color:#a9b2bb; background:#a9b2bb;}
+
+.btn_bdgreen_25 {display:inline-block; min-width:50px; height:25px; padding:0 12px; margin:0; border:1px solid #43baca; border-radius:4px; background:#fff; color:#43baca; font-size:13px; line-height:23px; font-weight:500; text-align:center;}
+.btn_bggreen_25 {display:inline-block; min-width:50px; height:25px; padding:0 12px; margin:0; border:1px solid #43baca; border-radius:4px; background:#43baca; color:#fff; font-size:13px; line-height:23px; font-weight:500; text-align:center;}
+
+.btn_tbl_bggreen {display:inline-block; min-width:93px; height:30px; padding:0 5px; margin:0; border:1px solid #43baca; border-radius:4px; background:#43baca; color:#fff; font-size:13px; line-height:28px; font-weight:400; text-align:center;}
+.btn_tbl_bggreen02 {display:inline-block; min-width:68px; height:30px; padding:0 5px; margin:0; border:1px solid #43baca; border-radius:4px; background:#43baca; color:#fff; font-size:13px; line-height:28px; font-weight:400; text-align:center;}
+.btn_tbl_bggreen03 {display:inline-block; min-width:30px; height:30px; padding:0 5px; margin:0; border:1px solid #43baca; border-radius:4px; background:#43baca; color:#fff; font-size:13px; line-height:28px; font-weight:400; text-align:center;}
+
+
+
+/* common */
+.f_left {float:left !important;}
+.f_right {float:right !important;}
+.mgt0 {margin-top:0 !important;}
+.mgt5 {margin-top:5px !important;}
+.mgt10 {margin-top:10px !important;}
+.mgt20 {margin-top:20px !important;}
+.mgt30 {margin-top:30px !important;}
+.mgt60 {margin-top:60px !important;}
+.mgt_20 {margin-top:-20px !important;}
+.mgt_25 {margin-top:-25px !important;}
+.mgt_29 {margin-top:-29px !important;}
+.mgt_35 {margin-top:-35px !important;}
+.mg_auto {margin:0 auto !important;}
+.mg_auto.inline_block {width:100%;}
+
+.mgl5 {margin-left:5px !important;}
+.mgl10 {margin-left:10px !important;}
+.mgr10 {margin-right:10px !important;}
+
+.pd0 {padding:0 !important;}
+.pd10 {padding:10px !important;}
+.pdt10{padding-top: 10px !important;}
+.pdt15{padding-top: 15px !important;}
+.pdt20{padding-top: 20px !important;}
+.pdt30{padding-top: 30px !important;}
+.pdt40{padding-top: 40px !important;}
+.pdt50{padding-top: 50px !important;}
+.pdt60{padding-top: 60px !important;}
+.pdt70{padding-top: 70px !important;}
+.pdt80{padding-top: 80px !important;}
+
+
+
+.search_field .datepicker_wrap{width: 100%;} /*datepicker 2개일때*/
+.search_field .datepicker_wrap input.datepicker{display: inline-block; width: calc((100% - 20px) / 2);}
+.search_field .datepicker_wrap em{display: inline-block; width: 20px; font-size: 12px; text-align: center; vertical-align: middle;}
+
+.search_field .datepicker_box{position: relative; display: inline-block; } /*datepicker 1개일때*/
+.search_field .datepicker_box img{position: absolute; top: 5px; right: 8px; width: 20px; height: 20px; border: 1px solid blue;}
+
+
+
+.align_left {text-align:left !important;}
+.align_right {text-align:right !important;}
+.align_center {text-align:center !important;}
+.align_center_all * {text-align:center !important;}
+
+
+
+
+
+
+<safari문제점>
+- border-radius
+
+-webkit-border-radius:0; 
+-webkit-appearance:none;
+
+
+
+익스프롤러 핵(익스플로러에서만 먹는 css로 구글에 검색하면 나온다.)
+_:-ms-fullscreen, :root .해당클래스 { property:value; }
+
+
+
+
+
+
