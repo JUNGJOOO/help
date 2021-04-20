@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox 전체선택</title>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+
+
+    /* The checkbox */
+    .checkbox {position: relative;}
+
+    /* 기본 체크박스 없애기 */
+    .checkbox input[type="checkbox"] {
+        position: absolute;
+        width: 1px; height: 1px;
+        padding: 0; margin: -1px;
+        overflow: hidden; clip:rect(0,0,0,0); border: 0
+    }
+
+    /* 웹의 경우 커서에 pointer 설정 */
+    .checkbox input[type="checkbox"] + label {
+        display: inline-block; position: relative; cursor: pointer;
+        -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+    }
+
+    /* 새로운 디자인의 체크박스 만들기 */
+    .checkbox input[type="checkbox"] + label:before {
+        content: ' ';
+        display: inline-block; width: 18px; height: 18px;
+        margin: -2px 8px 0 0;
+        text-align: center; line-height: 18px;
+        vertical-align: middle; background: #fafafa;
+        border: 1px solid #cacece; border-radius: 3px;
+        
+    }
+
+    .checkbox input[type="checkbox"]:checked + label:after {
+        content: ''; position: absolute;
+        left: 6px; top: 5px; width: 5px; height: 10px;
+        border: solid blue; border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);
+    }
+
+
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li class="checkbox">
+            <input type="checkbox" id="checkall" />
+            <label for="checkall">전체선택</label>
+        </li>
+        <li class="checkbox">
+            <input type="checkbox" name="check" id="check1" />
+            <label for="check1">구독신청</label>
+        </li>
+        <li class="checkbox">
+            <input type="checkbox" name="check" id="check2" />
+            <label for="check2">구독신청</label>
+        </li>
+    </ul>
+    
+    <div class="checkbox">
+        <input type="checkbox" id="check2">
+        <label for="check2">구독신청</label>
+    </div>
+
+<script>
+$(document).ready(function(){
+    $("#checkall").click(function(){
+        if($("#checkall").prop("checked")){
+            $("input[name=check]").prop("checked",true);
+        }else{
+            $("input[name=check]").prop("checked",false);
+        }
+    })
+})
+</script>
+
+</body>
+</html>
