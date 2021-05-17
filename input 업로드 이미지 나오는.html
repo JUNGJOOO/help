@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일업로드 이미지 나오게</title>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+        .myprofile{margin-bottom: 50px; font-size: 0;}
+        .myprofile .mpf_left{position: relative; display: inline-block; width: 130px; margin-right: 20px; vertical-align: middle;}
+        .myprofile .file {position: absolute; bottom: 0; right: 0; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; background: #007f8a url(../img/jimg/jicon_07.png) no-repeat center;}
+        .myprofile .file .file-input {height: 100%; left: 0; opacity: 0; outline: none; position: absolute; top: 0; width: 100%; cursor: pointer;}
+    </style>
+</head>
+<body>
+    
+<!-- 파일 업로드 이미지 프리뷰 -->
+
+    <div class="myprofile">
+    <div class="mpf_left">
+        <div class="mpf_left_img">
+            <img style="width: 100%;" id="preview-image" src="img/jimg/jmyprofile.png">
+        </div>
+        <div class="file">
+            <label class="file-label">
+                <input class="file-input" type="file" id="input-image" name="resume">
+                <span class="file-cta">파일선택</span>
+            </label>
+        </div>
+    </div>
+        <script>
+
+            function readImage(input) {
+                // 인풋 태그에 파일이 있는 경우
+                if(input.files && input.files[0]) {
+
+                    // 이미지 파일인지 검사 (생략)
+
+                    // FileReader 인스턴스 생성
+                    const reader = new FileReader()
+
+                    // 이미지가 로드가 된 경우
+                    reader.onload = e => {
+                        const previewImage = document.getElementById("preview-image")
+                        previewImage.src = e.target.result
+                    }
+
+                    // reader가 이미지 읽도록 하기
+                    reader.readAsDataURL(input.files[0])
+                }
+                }
+
+                // input file에 change 이벤트 부여
+                const inputImage = document.getElementById("input-image")
+                inputImage.addEventListener("change", e => {
+                readImage(e.target)
+            })
+
+
+
+
+            $(function () {
+                // File upload 를 위한 스크립트
+                $(document).on('change','.file-input',function () {
+                    var fileName = $(this)[0].files ? $(this)[0].files[0].name : $(this)[0].value.match(/[^\/\\]*$/)[0];
+                    if ($(this).length > 0) {
+                        $(this).closest('.file').find('.file-name').text(fileName);
+                    }
+                });
+
+            
+            });
+        </script>
+
+    </div>
+</body>
+</html>
