@@ -1,0 +1,78 @@
+파일서버  
+\\203.233.229.165 
+다른계정 사용 company/qwer1234, 자격정보 기억 
+
+trk 운영 DB정보
+- url : 203.233.200.166:1525
+- sid : mld
+- id : tradekorea
+- pw: gemp1qdb
+
+Koms 운영 DB 정보
+- url : 203.233.200.166:1525 
+- sid : mld
+- id : bis
+- pw: bis1qdb
+
+trk 개발 DB정보
+- url : 203.233.200.228:1525
+- sid : mld
+- id : tradekorea
+- pw: gemp1qdb
+
+Koms 개발 DB 정보
+- url : 203.233.200.228:1525
+- sid : mld
+- id : bis
+- pw: bis1qdb
+
+서버 접속 관련
+ㅇ 협회 서버접근제어시스템(NGS) 아이디를 발급 받아야함
+   - 해당 URL 접속후 ID 신청과 접근 서버 IP설정 
+      -> https://ngs.kita.net:9000/
+      -> 담당 문의 : IDC 김태균 과장 02-6000-5321/5419
+
+tradeKorea, KOMS 서버 IP 정보
+   - TRADEKOREA  IP (ADMIN도 동일)
+      . 운영: 203.233.202.165
+               203.233.202.166
+      . 개발: 203.233.202.183
+
+    - TK DB (포트 1525)
+      . 운영: 203.233.200.166:1525
+      . 개발: 203.233.200.228:1525
+
+    - KOMS IP (포트80)
+      . 운영: 203.233.202.38  
+      . 개발: 203.233.202.184  
+
+    - KOMS DB (포트1525)  
+      . 운영: 203.233.200.166:1525
+      . 개발: 203.233.200.228:1525 
+
+CBT 매칭팅 요구사항 상세정의 문서(구글닥스) 
+ - https://docs.google.com/spreadsheets/d/1lL1bbPrwD7rYIaP0thH3gvuVQneXvLO8YVLUDmtaAs8/edit#gid=0
+
+tradeKorea URL : tradeKorea. com
+ - 계정 (바이어) : trk111/123456
+ - 계정(셀러): trk003/123456
+
+tradeKorea 관리자 페이지 URL 
+ - https://admin.tradekorea.com/
+ - 계정 : norma1/ norma123
+
+KOMS URL 
+ - http://koms.kita.net
+ - 계정 : norma1/norma1
+
+IDC 담당자 
+ - 김태균 과장 02-6000-5321 
+ - IDC 담당자 연락시 김태희 부장과 협의후 연락진행함 
+
+샤크라 클라이언트 설치 및 계정/PW (김태희, 강원진, 정길순만 해당)
+- 파일서버 : \유틸\ChakraMaxClientSetup
+- 샤크라 클라이언트 설치 후 윈도우 리부팅 
+- 바탕화면에 Chakra Max Client V2실행 
+- 사용자 계정은 신청ID 입력, 초기비번은 K(대문자)ita1234
+- 로그인 후 PW는 변경함 
+- SQLDEVELOPER를 실행하여 tradeKorea/KOMS 운영DB 접속함 
